@@ -209,3 +209,24 @@ header img:hover{
   border: 1px solid grey;
   padding: 10px
 }
+.projectcont {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+article {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.align{
+  text-align: center;
+}
+.imageproject{
+  max-width: 100%;
+  max-height: 100%;
+}
+.imageproject:hover{
+  opacity: 1;
+  cursor: pointer;
+}
