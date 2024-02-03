@@ -16,6 +16,6 @@
     </p>
 
     <!-- Date de mise à jours du site -->
-    <p class="updatetime"><small>Dernière mise à jours le <time datetime="2024-02-10">10 février 2024</time></small></p>
+    <p class="updatetime"><small>Dernière mise à jours le <time datetime="2024-02-04">04 février 2024</time></small></p>
   </footer>
 </template>
