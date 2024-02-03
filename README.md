@@ -2,10 +2,17 @@
 
 ## IDE Recommandé pour l'utilisation
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (et désactivez Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
 
-## Commande installation
+## Installation VUE.JS
+
+```sh
+npm create vue@latest
+```
+
+
+## Commande installation Paquets
 
 ```sh
 npm install
@@ -21,4 +28,11 @@ npm run dev
 
 ```sh
 npm run build
+```
+
+### Installation Tailwind VUE 3
+
+```
+https://v2.tailwindcss.com/docs/guides/vue-3-vite
+
 ```
