@@ -25,7 +25,7 @@
       </blockquote>
     </section>
 
-    <router-view></router-view>
+
   </main>
 </template>
 
