@@ -1,6 +1,8 @@
 <template>
   <div>
     <main class="custom-column_about">
+      
+      <!-- Formulaire de contact -->
       <form @submit.prevent="envoyerEmail" class="space-y-4">
         <div class="flex space-x-4">
           <div class="flex-1">
