@@ -1,95 +1,69 @@
 <template>
   <div>
     <main class="custom-column_about">
-      
-      <!-- Formulaire de contact -->
-      <form @submit.prevent="envoyerEmail" class="space-y-4">
-        <div class="flex space-x-4">
-          <div class="flex-1">
-            <label for="nom" class="block text-sm font-medium text-gray-700"
-              >Nom :</label
-            >
-            <input
-              v-model="nom"
-              type="text"
-              id="nom"
-              name="nom"
-              required
-              class="mt-1 p-2 w-full border rounded-md"
-            />
-          </div>
-          <div class="flex-1">
-            <label for="prenom" class="block text-sm font-medium text-gray-700"
-              >Prénom :</label
-            >
-            <input
-              v-model="prenom"
-              type="text"
-              id="prenom"
-              name="prenom"
-              required
-              class="mt-1 p-2 w-full border rounded-md"
-            />
-          </div>
-        </div>
-        <label for="objet" class="block text-sm font-medium text-gray-700"
-          >Objet :</label
-        >
-        <input
-          v-model="objet"
-          type="text"
-          id="objet"
-          name="objet"
-          required
-          class="mt-1 p-2 w-full border rounded-md"
-        />
-        <label for="message" class="block text-sm font-medium text-gray-700"
-          >Message :</label
-        >
-        <textarea
-          v-model="message"
-          id="message"
-          name="message"
-          required
-          class="mt-1 p-2 w-full border rounded-md"
-        ></textarea>
-        <button
-          type="submit"
-          class="px-4 py-2 bg-blue-500 text-white rounded-md"
-        >
-          Envoyer
-        </button>
-      </form>
+      <form ref="form" @submit.prevent="sendEmail" class="max-w-md mx-auto p-6 bg-white rounded-md shadow-md">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="user_name">Name:</label>
+      <input type="text" v-model="name" name="user_name" class="w-full p-2 border border-gray-300 rounded-md mb-3" />
+
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="user_email">Email:</label>
+      <input type="email" v-model="email" name="user_email" class="w-full p-2 border border-gray-300 rounded-md mb-3" />
+
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message:</label>
+      <textarea v-model="message" name="message" class="w-full p-2 border border-gray-300 rounded-md mb-3"></textarea>
+
+      <div v-if="formNotFilled" class="text-red-500 mb-3">Veuillez remplir tous les champs.</div>
+      <div v-if="successMessage" class="text-green-500 mb-3">{{ successMessage }}</div>
+
+      <input type="submit" value="Send" class="w-full p-2 bg-blue-500 text-white rounded-md cursor-pointer hover:bg-blue-600" />
+    </form>
     </main>
   </div>
 </template>
 
 <script>
+import emailjs from "@emailjs/browser";
+
 export default {
   name: "Contact",
   data() {
     return {
-      nom: "",
-      prenom: "",
-      objet: "",
+      name: "",
+      email: "",
       message: "",
+      formNotFilled: false,
+      successMessage: "",
     };
   },
   methods: {
-    envoyerEmail() {
-      const data = {
-        nom: this.nom,
-        prenom: this.prenom,
-        objet: this.objet,
-        message: this.message,
-        emailDestination: process.env.VUE_APP_EMAIL_DESTINATION,
-      };
+    sendEmail() {
+      if (!this.name || !this.email || !this.message) {
+        this.formNotFilled = true;
+        this.successMessage = ""; // Réinitialiser le message de succès s'il y en avait un
+        return;
+      }
 
-      // Réinitialiser les champs du formulaire après l'envoi
-      this.nom = "";
-      this.prenom = "";
-      this.objet = "";
-      this.message = "";
+      emailjs
+        .sendForm(
+          "service_uufh5ph",
+          "template_m811jk9",
+          this.$refs.form,
+          "wTZCIoV3dYBw4wBOj"
+        )
+        .then(
+          (result) => {
+            console.log("SUCCESS!", result.text);
+            this.formNotFilled = false;
+            this.successMessage = "E-mail envoyé avec succès";
+
+            // Réinitialiser les champs du formulaire après l'envoi
+            this.name = "";
+            this.email = "";
+            this.message = "";
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
     },
   },
 };

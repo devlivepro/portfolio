@@ -23,6 +23,12 @@ p{
 a{
   text-decoration: none;
 }
+form{
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  width: 100%;
+}
 h1{
   font-size: 1rem;
   text-transform: uppercase;
@@ -31,6 +37,7 @@ h2 {
   font-size: 1.2rem;
   font-weight: normal;
   border: 1px solid gray;
+  border-style: dashed;
   padding: 5px;
 }
 h3 {
@@ -107,6 +114,7 @@ nav a {
 .social-icons {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .social-icons a {
@@ -121,9 +129,14 @@ nav a {
   transition: opacity 0.6s ease;
   opacity: 0.7;
 }
+.updatetime {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
 .custom-container {
   display: flex;
-  flex-wrap: wrap; /* Permet à la ligne de se plier si l'espace est insuffisant */
+  flex-wrap: wrap;
 }
 .custom-column_about {
   flex-basis: 100%;
@@ -132,8 +145,8 @@ nav a {
   margin: 0;
   background-color: #f0f0f0;
   box-sizing: border-box;
-  height: 100%;
-  margin-block-end: 20px;
+  height: auto;
+  margin-block-end: 10px;
 }
 .custom-column_project {
   flex-basis: 100%;
@@ -143,7 +156,7 @@ nav a {
   background-color: #f0f0f0;
   box-sizing: border-box;
   height: 100%;
-  margin-block-end: 20px;
+  margin-block-end: 10px;
 }
 .custom-column {
   flex-basis: calc(
@@ -221,6 +234,7 @@ header img:hover{
   display: flex;
   flex-direction: row;
   width: 100%;
+  margin-block-end: 10px;
 }
 article {
   width: 100%;
@@ -234,6 +248,7 @@ article {
   height: 500px;
   max-width: 100%;
   max-height: 100%;
+  padding: 10px;
 }
 .imageproject:hover{
   opacity: 1;
@@ -261,15 +276,15 @@ article {
 }
 .modal-content {
   background-color: #fff;
-  padding: 20px;
   border-radius: 8px;
   position: relative;
   width: 50%;
+  padding: 80px;
 }
 .modal-close {
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 10px;
-  font-size: 20px;
+  font-size: 50px;
   cursor: pointer;
 }
