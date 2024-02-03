@@ -12,15 +12,16 @@
           prêt à relever tous les défis que l'informatique peut offrir. J'aime
           apprendre de nouveaux langages.</h2>
         </p>
-        <p>
-            <h4>Mes compétances :</h4>
-            HTML-HTML5
-            PHP
-            JS
-            CSS-CSS3
-            Git-GitHub
-            .NET
-        </p>
+        <div>
+        <h4>Mes compétances :</h4>
+          <ul>
+            <li>HTML</li>
+              <li>PHP</li>
+              <li>CSS</li>
+              <li>Git-GitHub</li>
+              <li>.NET</li>
+          </ul>
+        </div>
       </blockquote>
     </section>
 
