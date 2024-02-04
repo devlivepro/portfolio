@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Dev from '../views/Dev.vue'; // Importez la nouvelle page
 import Project from '../views/Project.vue'; // Importez la nouvelle page
 import Contact from '../views/Contact.vue'; // Importez la nouvelle page
+import Page404 from '../views/Page404.vue'; // Ajoutez l'import pour la page 404
 
 const routes = [
   { path: '/', component: HomeView },
@@ -18,19 +19,24 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/dev', // Nouvelle route
+      path: '/dev',
       name: 'dev',
-      component: Dev // Associez la route au composant de la nouvelle page
+      component: Dev
     },
     {
-      path: '/project', // Nouvelle route
+      path: '/project',
       name: 'project',
-      component: Project // Associez la route au composant de la nouvelle page
+      component: Project
     },
     {
-      path: '/contact', // Nouvelle route
+      path: '/contact',
       name: 'contact',
-      component: Contact // Associez la route au composant de la nouvelle page
+      component: Contact
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'Page404',
+      component: Page404
     }
   ]
 })

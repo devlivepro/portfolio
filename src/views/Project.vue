@@ -4,6 +4,8 @@
       <!-- Projet 1 -->
       <article>
         <h2 class="align">CV</h2>
+        <h5 class="align">Création le 10 janvier 2024</h5>
+        <h5 class="align">Visual Studio Code, css.</h5>
         <img
           class="imageproject"
           src="@/assets/images/cv.png"
@@ -15,6 +17,8 @@
       <!-- Projet 2 -->
       <article>
         <h2 class="align">Cahier des charges</h2>
+        <h5 class="align">Création le 17 janvier 2024</h5>
+        <h5 class="align">Microsft Office Word.</h5>
         <img
           class="imageproject"
           src="@/assets/images/cdc.png"
@@ -26,6 +30,8 @@
       <!-- Projet 3 -->
       <article>
         <h2 class="align">Dynamiser un espace commentaire</h2>
+        <h5 class="align">Création le 30 janvier 2024</h5>
+        <h5 class="align">Visual Studio Code, css, javascript.</h5>
         <img
           class="imageproject"
           src="@/assets/images/cm.png"
@@ -37,7 +43,7 @@
       <!-- Composant Modal 1 -->
       <Modal ref="modal1">
         <h2>{{ modalTitle }}</h2>
-        <a href="https://github.com/devlivepro/cv" target="_blank">
+        <a href="https://github.com/devlivepro/cv-dev" target="_blank">
           <h5>
             <p class="download_github">Télécharger le projet</p>
           </h5>
